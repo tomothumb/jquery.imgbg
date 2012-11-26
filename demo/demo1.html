@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>jquery.imgbg DEMO1 ( basic )</title>
+<link href='//fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
+<link href='/common/css/common.css' rel='stylesheet' type='text/css'>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="../src/vendor/jquery-1.8.3.min.js"><\/script>')</script>
+<link rel="stylesheet" href="../src/jquery.imgbg.css" media="all">
+<script src="../src/jquery.imgbg.1.0.min.js"></script>
+
+<link href="http://alexgorbatchev.com/pub/sh/current/styles/shCore.css" rel="stylesheet" type="text/css" />
+<link href="http://alexgorbatchev.com/pub/sh/current/styles/shThemeDefault.css" rel="stylesheet" type="text/css" />
+<script src="http://alexgorbatchev.com/pub/sh/current/scripts/shCore.js" type="text/javascript"></script>
+<script src="http://alexgorbatchev.com/pub/sh/current/scripts/shAutoloader.js" type="text/javascript"></script>
+<script src="/common/js/common.js"></script>
+</head>
+<body>
+<div id="content">
+<ul>
+  <li><a href="demo1.html">DEMO1 (basic)</a></li>
+  <li><a href="demo2.html">DEMO2 (customize : center position setting)</a></li>
+  <li><a href="demo3.html">DEMO3 (customize : image offset)</a></li>
+</ul>
+<h1>jquery.imgbg DEMO2 (basic)</h1>
+<p>This is a basic demo sample using this plugin.</p>
+<p>If you change browser size, background image also will be resized.</p>
+
+<h2>How to use</h2>
+
+<h3>HTML (basic)</h3>
+<pre class="brush: html">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="../src/vendor/jquery-1.8.3.min.js"><\/script>')</script>
+<link rel="stylesheet" href="../src/jquery.imgbg.css" media="all">
+<script src="../src/jquery.imgbg.1.0.min.js"></script>
+</pre>
+
+<h3>HTML (image)</h3>
+<pre class="brush: html">
+<!--
+write <IMG> Tag before end of <BODY> Tag.
+(Please make sure default image size and set both of width and height attributes default images size.)
+-->
+<img id="demo" src="[path to image]/sample.jpg" alt="" width="1200" height="900" >
+</body>
+</pre>
+
+<h3>Setting example</h3>
+<pre class="brush: js">
+$(function(){
+  $("#demo").imgbg();
+});
+</pre>
+</div>
+
+<footer id="footer">
+<p id="copyright">by <a href="http://codechord.com/" target="_blank">codechord.com</a></p>
+</footer>
+
+<img id="sample" src="./images/sample1.jpg" alt="" width="1200" height="900" >
+<script>
+(function($) {
+  $(function(){
+    $("#sample").imgbg();
+  });
+})(jQuery);
+</script>
+</body>
+</html>

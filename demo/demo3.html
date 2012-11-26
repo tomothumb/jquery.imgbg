@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>jquery.imgbg DEMO3 (customize : image offset)</title>
+<link href='//fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
+<link href='/common/css/common.css' rel='stylesheet' type='text/css'>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="../src/vendor/jquery-1.8.3.min.js"><\/script>')</script>
+<link rel="stylesheet" href="../src/jquery.imgbg.css" media="all">
+<script src="../src/jquery.imgbg.1.0.min.js"></script>
+
+<link href="http://alexgorbatchev.com/pub/sh/current/styles/shCore.css" rel="stylesheet" type="text/css" />
+<link href="http://alexgorbatchev.com/pub/sh/current/styles/shThemeDefault.css" rel="stylesheet" type="text/css" />
+<script src="http://alexgorbatchev.com/pub/sh/current/scripts/shCore.js" type="text/javascript"></script>
+<script src="http://alexgorbatchev.com/pub/sh/current/scripts/shAutoloader.js" type="text/javascript"></script>
+<script src="/common/js/common.js"></script>
+</head>
+<body>
+<div id="content">
+<ul>
+  <li><a href="demo1.html">DEMO1 (basic)</a></li>
+  <li><a href="demo2.html">DEMO2 (customize : center position setting)</a></li>
+  <li><a href="demo3.html">DEMO3 (customize : image offset)</a></li>
+</ul>
+<h1>jquery.imgbg DEMO3 (customize : image offset)</h1>
+<p>This is a demo sample of customizing offset position of image.</p>
+<p>For example, if you put some content on upper of browser,<br />
+you might want to down background image position to dozens of pixels.</p>
+It will work not only top side but also left, right and bottom side offset.
+</p>
+<p>Here is example to set Right side offset 100px and Bottom side offset 50px.</p>
+
+
+<h2>How to use</h2>
+
+<h3>HTML (LOAD plugin)</h3>
+<pre class="brush: html">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="../src/vendor/jquery-1.8.3.min.js"><\/script>')</script>
+<link rel="stylesheet" href="../src/jquery.imgbg.css" media="all">
+<script src="../src/jquery.imgbg.1.0.min.js"></script>
+</pre>
+
+<h3>HTML (image)</h3>
+<pre class="brush: html">
+<!--
+write <IMG> Tag before end of <BODY> Tag.
+(Please make sure default image size and set both of width and height attributes default images size.)
+-->
+<img id="demo" src="[path to image]/sample.jpg" alt="" width="1200" height="900" >
+</body>
+</pre>
+
+<h3>Setting example</h3>
+<pre class="brush: js">
+$(function(){
+
+  // this is default setting
+  $("#demo").imgbg({
+    top    : 0,
+    bottom : 0,
+    left   : 0,
+    right  : 0
+  });
+
+  // No1: center of images. (default setting)
+  $("#demo").imgbg({
+    bottom : 50,
+    right  : 100
+  });
+
+  // No1: you can set top/bottom/left/right
+  $("#demo").imgbg({
+    top    : 10,    // 10px from top side
+    bottom : 20,    // 20px from bottom side
+    left   : 30,    // 30px from left side
+    right  : 40    // 40px from right side
+  });
+
+});
+</pre>
+</div>
+
+
+<footer id="footer">
+<p id="copyright">by <a href="http://codechord.com/" target="_blank">codechord.com</a></p>
+</footer>
+
+<img id="sample" src="./images/sample3.jpg" alt="" width="1200" height="900" >
+<script>
+(function($) {
+  $(function(){
+    $("#sample").imgbg({
+      bottom : 50,
+      right  : 100
+    });
+  });
+})(jQuery);
+</script>
+</body>
+</html>

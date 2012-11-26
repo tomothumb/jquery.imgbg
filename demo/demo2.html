@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>jquery.imgbg DEMO2 (customize : center position setting)</title>
+<link href='//fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
+<link href='/common/css/common.css' rel='stylesheet' type='text/css'>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="../src/vendor/jquery-1.8.3.min.js"><\/script>')</script>
+<link rel="stylesheet" href="../src/jquery.imgbg.css" media="all">
+<script src="../src/jquery.imgbg.1.0.min.js"></script>
+
+<link href="http://alexgorbatchev.com/pub/sh/current/styles/shCore.css" rel="stylesheet" type="text/css" />
+<link href="http://alexgorbatchev.com/pub/sh/current/styles/shThemeDefault.css" rel="stylesheet" type="text/css" />
+<script src="http://alexgorbatchev.com/pub/sh/current/scripts/shCore.js" type="text/javascript"></script>
+<script src="http://alexgorbatchev.com/pub/sh/current/scripts/shAutoloader.js" type="text/javascript"></script>
+<script src="/common/js/common.js"></script>
+</head>
+<body>
+<div id="content">
+<ul>
+  <li><a href="demo1.html">DEMO1 (basic)</a></li>
+  <li><a href="demo2.html">DEMO2 (customize : center position setting)</a></li>
+  <li><a href="demo3.html">DEMO3 (customize : image offset)</a></li>
+</ul>
+<h1>jquery.imgbg DEMO2 (customize : center position setting)</h1>
+<p>This is a demo sample of customizing image base position.</p>
+<p>If you want to change a base position of image when visitors change a browser size,
+you have to set parameter (left &amp; top) in number of percent.<br>
+[upper left / lower right / left:30%, top:80% / etc..] <br>
+Images will be resized on basis of the posision which you set when user chenge a browser size.
+</p>
+<p>This page is example of setting basis on lower right corner.</p>
+
+
+<h2>How to use</h2>
+
+<h3>HTML (LOAD plugin)</h3>
+<pre class="brush: html">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="../src/vendor/jquery-1.8.3.min.js"><\/script>')</script>
+<link rel="stylesheet" href="../src/jquery.imgbg.css" media="all">
+<script src="../src/jquery.imgbg.1.0.min.js"></script>
+</pre>
+
+<h3>HTML (image)</h3>
+<pre class="brush: html">
+<!--
+write <IMG> Tag before end of <BODY> Tag.
+(Please make sure default image size and set both of width and height attributes default images size.)
+-->
+<img id="demo" src="[path to image]/sample.jpg" alt="" width="1200" height="900" >
+</body>
+</pre>
+
+<h3>Setting example</h3>
+<pre class="brush: js">
+$(function(){
+
+  // No1: center of images. (default setting)
+  $("#demo").imgbg({
+    centerX : 50,
+    centerY : 50
+  });
+
+  // No2: upper left corner of images
+  $("#demo").imgbg({
+    centerX : 0,    // position from from left (without string '%')
+    centerY : 0     // position from top (without string '%')
+  });
+
+  // No3: lower right corner of images
+  $("#demo").imgbg({
+    centerX : 100,    // position from from left (without string '%')
+    centerY : 100     // position from from top (without string '%')
+  });
+
+});
+</pre>
+</div>
+
+
+<footer id="footer">
+<p id="copyright">by <a href="http://codechord.com/" target="_blank">codechord.com</a></p>
+</footer>
+
+
+<img id="sample" src="./images/sample2.jpg" alt="" width="1200" height="900" >
+<script>
+(function($) {
+  $(function(){
+    $("#sample").imgbg({
+      centerX : 100,
+      centerY : 100
+    });
+  });
+})(jQuery);
+</script>
+</body>
+</html>
