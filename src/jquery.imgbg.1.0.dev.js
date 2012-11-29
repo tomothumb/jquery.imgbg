@@ -1,5 +1,6 @@
 /**
  * jQuery imgbg v1.0 - 2012-11-25
+ * https://github.com/tomothumb/jquery.imgbg
  * (c) 2012 Tomoyuki Tsujmioto
  * license: www.opensource.org/licenses/mit-license.php
  */
@@ -84,9 +85,7 @@
      * @param  {object} $E [jQuery element of image which you want to use background.]
      */
     var resize = function($E){
-      console.log("resize", init[$E[0].id].aspectRate);
       chkAspectRate();
-      console.log(1, init[$E[0].id].aspectRate, bgAreaAspectRate);
       if(init[$E[0].id].aspectRate > bgAreaAspectRate ){
         // case of Width shortage.
         output.width = bgAreaW * (opts.widthRate/100);
